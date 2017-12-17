@@ -15,7 +15,7 @@ from a .env file into process.env
 */
 
 const EXPRESS = require('express');
-var APP = EXPRESS();
+const APP = EXPRESS();
 
 // handles secret keys/tokens
 require('dotenv').config();
