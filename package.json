@@ -1,0 +1,23 @@
+{
+  "name": "5-day-weather-spa",
+  "version": "1.0.0",
+  "description": "A single HTML page displaying the 5 day weather forecast.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nccshecodes/5-day-weather-spa.git"
+  },
+  "author": "Nathalie Christmann-Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nccshecodes/5-day-weather-spa/issues"
+  },
+  "homepage": "https://github.com/nccshecodes/5-day-weather-spa#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
