@@ -27,4 +27,6 @@ REQUEST(url, function(error, response, body){
 
 });
 
-APP.listen(1337);
+APP.listen(3000, function(){
+  console.log('5 day weather app listening on port 3000...')
+});
