@@ -17,7 +17,7 @@ Clone or download this git repository into a new project folder (eg 5-day-weathe
 $ npm install
 $ npm start
 ```
-Local server runs at http://localhost:1337/. Manually close down the server when you are finished with `Ctrl-C`.
+Local server runs at http://localhost:3000/. Manually close down the server when you are finished with `Ctrl-C`.
 
 ### npm Packages used:
 
@@ -57,14 +57,18 @@ Node.js body parsing middleware to handle form data.
 
 ### Challenges
 
-#### 5 day forcast json file
+#### 5 day forecast json file
 
-The json file is a huge with 39 data sets in total for the 5 day forcast
+~~The json file is a huge with 39 data sets in total for the 5 day forecast~~
 
-* 7 for today
-* and 8 for the following 4 days.
+* ~~7 for today~~
+* ~~and 8 for the following 4 days.~~
 
-Running through an online 'pretty jason' tool, makes the data human readable. Extracting one data set for a 3 hour span shows the properties that I have to select from.
+The json data has changed overnight and is now given correct number of 40 data sets for 5 day forecast, 8 x 3 hour blocks of data for each **24 hour period**.
+
+Also, if a property is empty, it is no longer output. This means that if it's not going to rain, the rain property will not be present within a 3 hour block of data.
+
+Running through an online 'pretty json' tool, makes the data human readable. Extracting one data set for a 3 hour span shows the properties that I have to select from.
 
 #### What makes a good UX?
 
@@ -76,18 +80,14 @@ On talking with some friends, there's lots of data given that on a day to day ba
 Moving forward with this research, I need a javascript solution to do the following:
 
 - [ ] parse the json and assign to a variable 'forecast'
-- [ ] use forecast.main.temp_max to get highest temp for each day
-- [ ] check if all the forecast.rain are empty to decide if it will rain for that day
-- [ ] use forcast.dt_txt to create Date and get the day value
+- [ ] use forecast.main.temp to get highest temp for each day
+
+~~- [ ] check if all the forecast.rain are empty to decide if it will rain for that day~~
+- [ ] check if rain property present within any of the 3 hour data blocks for **a given day**
+- [ ] use forecast.dt_txt to create Date and get the day value
 
 Other values that could be considered
 
 * forecast.weather.icon gives a weather icon id reference
 * forecast.weather.main gives weather parameters eg rain, snow, extreme.
 * forecast.weather.description is a short text description eg. light rain, or scattered clouds.
-
-
-
-
-
-
