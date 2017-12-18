@@ -1,27 +1,15 @@
-/*
-
-npm packages used:
-
-Express- small, robust tooling for HTTP servers
-For single page applications, web sites, hybrids, or public HTTP APIs.
-Support for over 14 template engines via https://github.com/tj/consolidate.js
-
-Request - designed to be the simplest way possible to make http calls.
-It supports HTTPS and follows redirects by default.
-
-dotenv - a zero-dependency module that loads environment variables
-from a .env file into process.env
-
-*/
-
+require('dotenv').config(); // handles secret keys/tokens
 const EXPRESS = require('express');
 const APP = EXPRESS();
+const REQUEST = require('request'); // api call using npm request package
+const BODY_PARSER = require('body-parser');
 
-// handles secret keys/tokens
-require('dotenv').config();
-
-// api call using npm request package
-const REQUEST = require('request');
+APP.use(EXPRESS.static('views')); // set default directory for html content
+APP.use(BODY_PARSER.urlencoded({extended:true})); // to handle form data
+APP.set('view engine', 'ejs');
+APP.all('/', function(req, res){ // route all requests to root directory
+  res.render('index'); // render index view using template engine
+});
 
 let apiKey = process.env.OPENWEATHERMAP_KEY;
 let city = 'London';
@@ -38,8 +26,5 @@ REQUEST(url, function(error, response, body){
   }
 
 });
-
-// set default directory for html content
-APP.use(EXPRESS.static('views'));
 
 APP.listen(1337);
