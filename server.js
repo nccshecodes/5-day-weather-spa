@@ -2,9 +2,14 @@ require('dotenv').config(); // handles secret keys/tokens
 const EXPRESS = require('express');
 const APP = EXPRESS();
 const REQUEST = require('request'); // api call using npm request package
+const BODY_PARSER = require('body-parser');
 
 APP.use(EXPRESS.static('views')); // set default directory for html content
+APP.use(BODY_PARSER.urlencoded({extended:true})); // to handle form data
 APP.set('view engine', 'ejs');
+APP.all('/', function(req, res){ // route all requests to root directory
+  res.render('index'); // render index view using template engine
+});
 
 let apiKey = process.env.OPENWEATHERMAP_KEY;
 let city = 'London';

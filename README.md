@@ -33,6 +33,9 @@ A zero-dependency module that loads environment variables from a .env file into 
 **ejs**
 A templating engine for generating reusable HTML structure and content
 
+**body-parser**
+Node.js body parsing middleware to handle form data.
+
 ## Brief specifications
 
 1. Use the [**OpenWeatherMap 5 day weather forecast API**](http://openweathermap.org/forecast5) to retrieve the current 5 day weather forecast. Requires sign up to get an API key.
