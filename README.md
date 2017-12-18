@@ -21,19 +21,19 @@ Local server runs at http://localhost:1337/. Manually close down the server when
 
 ### npm Packages used:
 
-**Express**
+[**Express**](https://www.npmjs.com/package/express)
 A small, robust tooling for HTTP servers. For single page applications, web sites, hybrids, or public HTTP APIs. Support for over 14 template engines via [consolidate.js](https://github.com/tj/consolidate.js)
 
-**Request**
+[**Request**](https://www.npmjs.com/package/request)
 Designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.
 
-**dotenv**
+[**dotenv**](https://www.npmjs.com/package/dotenv)
 A zero-dependency module that loads environment variables from a .env file into process.env
 
-**ejs**
+[**ejs**](http://ejs.co/)
 A templating engine for generating reusable HTML structure and content
 
-**body-parser**
+[**body-parser**](https://www.npmjs.com/package/body-parser)
 Node.js body parsing middleware to handle form data.
 
 ## Brief specifications
