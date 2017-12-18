@@ -57,9 +57,9 @@ Node.js body parsing middleware to handle form data.
 
 ### Challenges
 
-#### 5 day forcast json file
+#### 5 day forecast json file
 
-The json file is a huge with 39 data sets in total for the 5 day forcast
+The json file is a huge with 39 data sets in total for the 5 day forecast
 
 * 7 for today
 * and 8 for the following 4 days.
@@ -78,16 +78,10 @@ Moving forward with this research, I need a javascript solution to do the follow
 - [ ] parse the json and assign to a variable 'forecast'
 - [ ] use forecast.main.temp_max to get highest temp for each day
 - [ ] check if all the forecast.rain are empty to decide if it will rain for that day
-- [ ] use forcast.dt_txt to create Date and get the day value
+- [ ] use forecast.dt_txt to create Date and get the day value
 
 Other values that could be considered
 
 * forecast.weather.icon gives a weather icon id reference
 * forecast.weather.main gives weather parameters eg rain, snow, extreme.
 * forecast.weather.description is a short text description eg. light rain, or scattered clouds.
-
-
-
-
-
-
