@@ -80,7 +80,7 @@ On talking with some friends, there's lots of data given that on a day to day ba
 Moving forward with this research, I need a javascript solution to do the following:
 
 - [ ] parse the json and assign to a variable 'forecast'
-- [ ] use forecast.main.temp_max to get highest temp for each day
+- [ ] use forecast.main.temp to get highest temp for each day
 
 ~~- [ ] check if all the forecast.rain are empty to decide if it will rain for that day~~
 - [ ] check if rain property present within any of the 3 hour data blocks for **a given day**
