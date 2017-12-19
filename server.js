@@ -7,9 +7,13 @@ const BODY_PARSER = require('body-parser');
 APP.use(EXPRESS.static('views')); // set default directory for html content
 APP.use(BODY_PARSER.urlencoded({extended:true})); // to handle form data
 APP.set('view engine', 'ejs');
-APP.all('/', function(req, res){ // route all requests to root directory
+APP.get('/', function(req, res){ // route all requests to root directory
   res.render('index'); // render index view using template engine
 });
+APP.post('/', function (req, res) {
+  console.log(req.body.city);
+  res.render('index');
+})
 
 let apiKey = process.env.OPENWEATHERMAP_KEY;
 let city = 'London';
@@ -22,7 +26,9 @@ REQUEST(url, function(error, response, body){
     console.log('error: ', error); // Print the error if one occurred
   } else {
     console.log('statusCode: ', response && response.statusCode); // Print the response status code if a response was received
-    console.log('body: ', body) // Print the HTML
+    var forecast = body // Print the HTML
+    console.log('forecast variable is: ', forecast);
+    return forecast;
   }
 
 });
