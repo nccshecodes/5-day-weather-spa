@@ -10,5 +10,12 @@
   <input type="submit" class="" value="Tell me the weather!">
 </form>
 
+        <% if(locals.forecast !== null){ %>
+          <p><%= locals.forecast %></p>
+        <% } %>
+
+        <% if(locals.error !== null){ %>
+          <p><%= locals.error %></p>
+        <% } %>
 </body>
 </html>
